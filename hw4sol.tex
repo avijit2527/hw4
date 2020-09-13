@@ -1,0 +1,115 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{mlsubmit}
+
+\begin{document}
+
+\initmlsubmision{4} % assignment number
+{Avijit Roy}   % your name
+{18111404}	% your roll number
+
+\begin{mlsolution}
+
+\section{Eigenchangers!}
+X is an $N \times D$ matrix over $\mathbb{R}$. An Singular Value Decomposition(SVD) of X is $X = U \Sigma V^T$,where-
+
+1.The columns of U and V are orthonormal.
+
+2. if $\Sigma$ =($\sigma_{ij}$) then $\sigma_{ij}$ = 0 for $i\neq$ 0 and $\sigma_{11} \geq \sigma_{22} \geq ... \geq 0$. Let $\sigma_{ii} = \sigma_i$ are called singular values of X.
+
+\color{blue} Theorem: \color{black}Let X = $U \Sigma V^T$ be an SVD of A. Then,
+
+1. $\sigma_i$'s are the square roots of the eigenvalues of $X^TX$ (As well as $XX^T$).
+
+2. The columns of V are the eigenvectors of $X^TX$. 
+
+3. The columns of U are the eigenvectors of $XX^T$
+
+\color{blue} Proof: 
+
+\color{black}Columns of V are $(v_1,...,v_n)$
+
+Columns of U are $(u_1,...,u_n)$
+$$X^TXv_i = (U\Sigma V^T)^TU\Sigma V^Tv_i$$
+$$=(V^T)^T \Sigma^T U^TU\Sigma V^T v_i$$
+$$=V\Sigma^T \Sigma V^Tv_i =V\Sigma^T\Sigma e_i$$
+$$=V\Sigma_i^2e_i = \sigma_i^2v_i$$
+Here, We get the value of $\Sigma^T \Sigma$ as-
+$$\Sigma^T\Sigma=\begin{bmatrix}
+    \sigma_1       & 0 & 0 & \dots & 0 \\
+    0       & \sigma_2 & 0 & \dots & 0 \\
+    \hdotsfor{5} \\
+    0       & 0 & 0 & 0 & \sigma_r \\
+        \hdotsfor{5} \\
+	0       & 0 & 0 & 0 & 0
+\end{bmatrix}
+\begin{bmatrix}
+    \sigma_1       & 0 & 0 & \dots & 0 \\
+    0       & \sigma_2 & 0 & \dots & 0 \\
+    \hdotsfor{5} \\
+    0       & 0 & 0 & 0 & 0 \\
+        \hdotsfor{5} \\
+	0       & 0 & 0 & \sigma_r & 0
+\end{bmatrix} e_i$$
+$$=\begin{bmatrix}
+    \sigma_1^2       & 0 & 0 & \dots & 0 \\
+    0       & \sigma_2^2 & 0 & \dots & 0 \\
+    \hdotsfor{5} \\
+    0       & 0 & 0 & \sigma_r^2 & 0 \\
+        \hdotsfor{5} \\
+	0       & 0 & 0 & 0 & 0
+\end{bmatrix}_i = \sigma^2_i \times e_i$$
+$\therefore\; v_i$ is an eigenvector of $X^TX$ with eigenvalue $\sigma_i^2$
+
+The diagonal entries of $\Sigma$ are the roots of the eigenvalues of $X^TX $.
+
+Same argument shows that $u_i$'s are the eigenvectors of $X^TX$ with eigenvalues $\sigma_i^2$. 
+
+All the columns of U and V are linearly independent(as they are orthogonal). So, U and V invertible.
+$$XV = U\Sigma\;\;\;\;\;\;\;\;\;\;[V^T = V^{-1}]$$
+$$=(u_1,...,u_m)\Sigma$$
+$$=(\sigma u_1,\sigma u_2,...,\sigma_m u_m)$$
+$$\therefore Xv_i = \sigma_i u_i $$
+$$\boxed{ u_i=\frac{Xv_i}{\sigma_i}}$$
+\color{blue}Advantage: \color{black}
+Determining the eigenvalue of $XX^T(N\times N)$ will take $O(N^3)$ and for $X^TX (D \times D)$ it will take $O(D^3)$. As $N \leq D$, the time complexity will be less for $XX^T$
+case.
+\end{mlsolution}
+
+\begin{mlsolution} 
+
+\section{A General Activation Function}
+1. $\beta = kx$ where $k \rightarrow \infty$ will approximate the Identity function.
+\begin{flushleft}
+2. $\beta \rightarrow \infty$ then h(x) will approximate ReLU.
+\end{flushleft}
+
+
+\end{mlsolution}
+
+\begin{mlsolution}
+
+My solution to problem 3
+
+\end{mlsolution}
+
+\begin{mlsolution}
+
+My solution to problem 4
+
+\end{mlsolution}
+	
+\begin{mlsolution}
+
+My solution to problem 5
+
+\end{mlsolution}
+
+\begin{mlsolution}
+
+My solution to problem 6
+
+\end{mlsolution}
+
+
+\end{document}
